@@ -75,7 +75,7 @@ Follow these instructions to get a copy of the project up and running on your lo
 5.  **Create a `.env` file in the `frontend` directory:**
     This file should point to your local backend server.
     ```
-    VITE_API_URL=http://localhost:5000/api
+    VITE_API_URL=http://localhost:5000/api/notes/
     ```
 
 ### Running the Application
