@@ -1,0 +1,318 @@
+/* --- General App Layout --- */
+.App {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  color: var(--text-color);
+}
+
+main {
+  flex-grow: 1;
+  overflow-y: auto;
+  padding-top: 5rem; /* Space for fixed navbar */
+  padding-bottom: 6rem; /* Space for fixed footer */
+}
+
+.container {
+  max-width: 960px;
+  margin: 2rem auto;
+  padding: 1rem;
+}
+
+h1,
+h2 {
+  text-align: center;
+  color: var(--primary-color);
+  margin-bottom: 2rem;
+}
+
+/* --- Navbar Styles --- */
+.navbar {
+  background-color: var(--surface-color);
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 5px var(--shadow-color);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+}
+
+.navbar-logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+.navbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.theme-toggle-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--primary-color);
+  font-size: 1.5rem;
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+
+.navbar-button {
+  background-color: var(--primary-color);
+  color: var(--background-color);
+  padding: 0.6rem 1.2rem;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.2s ease-in-out;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.navbar-button:hover {
+  background-color: var(--text-color);
+  color: var(--background-color);
+}
+
+.navbar-button-icon {
+  display: block;
+}
+
+.navbar-button-text {
+  display: none;
+}
+
+/* Responsive navbar button: shows text only on larger screens */
+@media (min-width: 600px) {
+  .navbar-button-icon {
+    display: none;
+  }
+  .navbar-button-text {
+    display: block;
+  }
+}
+
+/* --- Note Form Styles --- */
+.note-form {
+  background: var(--surface-color);
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px var(--shadow-color);
+  margin-bottom: 2rem;
+}
+
+.note-form input,
+.note-form textarea {
+  width: 100%;
+  padding: 0.8rem;
+  margin-bottom: 1rem;
+  border-radius: 4px;
+  border: 1px solid var(--border-color);
+  background-color: var(--background-color);
+  color: var(--text-color);
+  font-size: 1rem;
+}
+
+.note-form textarea {
+  min-height: 200px;
+  resize: vertical;
+}
+
+.form-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-end;
+}
+
+.form-actions button {
+  padding: 0.7rem 1.5rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.form-actions button[type='submit'] {
+  background-color: var(--primary-color);
+  color: var(--background-color);
+}
+
+.form-actions button[type='button'] {
+  background-color: var(--subtle-text-color);
+  color: var(--background-color);
+}
+
+/* --- Notes List Styles --- */
+.notes-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.note-card-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.note {
+  background: var(--surface-color);
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px var(--shadow-color);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+.note:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 15px var(--shadow-color);
+}
+
+.note h3 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  color: var(--primary-color);
+  word-wrap: break-word;
+}
+
+.note p {
+  flex-grow: 1;
+  word-wrap: break-word;
+  margin: 0.5rem 0;
+  white-space: pre-wrap;
+}
+
+.note-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1.5rem;
+  width: 100%;
+}
+
+.note-footer small {
+  margin-top: 0;
+}
+
+.note-actions {
+  margin-top: 0;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.icon-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.25rem;
+  color: var(--subtle-text-color);
+  font-size: 1rem;
+  transition: color 0.2s ease-in-out, transform 0.2s ease-in-out;
+  display: flex;
+  align-items: center;
+}
+
+.icon-button:hover {
+  color: var(--primary-color);
+  transform: scale(1.1);
+}
+
+/* --- Custom Toast Styles --- */
+.toast-button-confirm,
+.toast-button-cancel {
+  border: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.toast-button-confirm {
+  background-color: #c0392b;
+}
+
+.toast-button-cancel {
+  background-color: #7f8c8d;
+}
+
+/* --- Empty State --- */
+.empty-state {
+  text-align: center;
+  padding: 4rem 2rem;
+  background-color: var(--surface-color);
+  border-radius: 8px;
+}
+
+.empty-state p {
+  font-size: 1.2rem;
+  color: var(--subtle-text-color);
+  margin-bottom: 2rem;
+}
+
+/* --- Accessibility & Polish --- */
+.theme-toggle-button:focus,
+.icon-button:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+/* Custom scrollbar for a modern look */
+main {
+  scrollbar-width: thin;
+  scrollbar-color: var(--subtle-text-color) var(--surface-color);
+}
+
+main::-webkit-scrollbar {
+  width: 8px;
+}
+
+main::-webkit-scrollbar-track {
+  background: var(--surface-color);
+  border-radius: 10px;
+}
+
+main::-webkit-scrollbar-thumb {
+  background-color: var(--subtle-text-color);
+  border-radius: 10px;
+  border: 2px solid var(--surface-color);
+}
+
+main::-webkit-scrollbar-thumb:hover {
+  background-color: var(--primary-color);
+}
+
+/* Footer styles */
+.footer {
+  background-color: var(--surface-color);
+  color: var(--subtle-text-color);
+  text-align: center;
+  padding: 1.5rem 0;
+  border-top: 1px solid var(--border-color);
+  font-size: 0.9rem;
+
+  /* --- Properties for the fixed behavior --- */
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+}
+
+.footer p {
+  margin: 0;
+}

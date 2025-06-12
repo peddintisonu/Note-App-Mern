@@ -1,0 +1,89 @@
+/*
+  Font definitions for the self-hosted Poppins font.
+  This ensures the font is available throughout the application.
+*/
+@font-face {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  src: url("/fonts/poppins-v20-latin-regular.woff2") format("woff2"),
+    url("/fonts/poppins-v20-latin-regular.woff") format("woff");
+}
+@font-face {
+  font-family: "Poppins";
+  font-style: italic;
+  font-weight: 400;
+  src: url("/fonts/poppins-v20-latin-italic.woff2") format("woff2"),
+    url("/fonts/poppins-v20-latin-italic.woff") format("woff");
+}
+@font-face {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 700;
+  src: url("/fonts/poppins-v20-latin-700.woff2") format("woff2"),
+    url("/fonts/poppins-v20-latin-700.woff") format("woff");
+}
+@font-face {
+  font-family: "Poppins";
+  font-style: italic;
+  font-weight: 700;
+  src: url("/fonts/poppins-v20-latin-700italic.woff2") format("woff2"),
+    url("/fonts/poppins-v20-latin-700italic.woff") format("woff");
+}
+
+/* reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+/*
+  Defines CSS variables for the color themes.
+  The dark theme uses the same palette as the light theme, but in an inverted manner.
+*/
+:root {
+  /* Light Theme (Coffee) */
+  --background-color: #f5f0e1;
+  --surface-color: #e8e2d5;
+  --primary-color: #6f4e37;
+  --text-color: #3b2f2f;
+  --subtle-text-color: #8b7d6b;
+  --border-color: #dcd1bb;
+  --shadow-color: rgba(0, 0, 0, 0.1);
+}
+
+body.dark {
+  /* Dark Theme (Coffee Inverted) */
+  --background-color: #3b2f2f;
+  --surface-color: #6f4e37;
+  --primary-color: #e8e2d5;
+  --text-color: #f5f0e1;
+  --subtle-text-color: #dcd1bb;
+  --border-color: #8b7d6b;
+  --shadow-color: rgba(0, 0, 0, 0.25);
+}
+
+body {
+  margin: 0;
+  font-family: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+    "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--background-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Global link styling for theme consistency */
+a {
+  color: var(--text-color);
+  text-decoration: none;
+  transition: color 0.2s ease-in-out;
+}
+
+a:hover {
+  color: var(--primary-color);
+}
