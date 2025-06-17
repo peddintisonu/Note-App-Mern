@@ -1,4 +1,4 @@
-# My Notes - MERN Stack App
+# My Notes - MERN Stack Application
 
 A clean, responsive, and full-featured note-taking application built with the MERN stack (MongoDB, Express, React, Node.js). Includes dark/light themes and is designed for a seamless user experience without requiring user authentication.
 
